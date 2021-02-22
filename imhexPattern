@@ -1,0 +1,22 @@
+u8 header[4] @ 0x0; // 170 85 170 255
+be u16 voltage @ 0x4; // * 0.1
+be u16 cell_volt[32] @ 0x6; // * 0.001
+be u16 current @ 0x46; // * 0.1
+u8 soc @ 0x4A; // percentage
+be u32 capacity @ 0x4f; // * 0.000001
+be u32 cycle_ah @ 0x53; // * 0.001  // unknown
+be u32 timer_s_32_zhi @ 0x57; // runtime
+be u16 mos @ 0x5b; // unknown
+be u16 balance @ 0x5d; // unknown
+be u16 temperature[4] @ 0x5f;
+u8 mosfet_charge_status @ 0x67;
+u8 mosfet_discharge_status @ 0x68;
+u8 balancing_status @ 0x69;
+be u16 Power @ 0x71;
+u8 cell_max_index @ 0x73; // cell_volt[index - 1]
+be u16 cell_max @ 0x74; // * 0.001
+u8 cell_min_index @ 0x76; // cell_volt[index - 1]
+be u16 cell_min @ 0x77; // * 0.001
+be u16 cell_average @ 0x79; // * 0.001
+u8 cell_count @ 0x7b; // possibly cell count
+u8 unk1[4] @ 0x84; // im guessing 32 bits representing balance state
